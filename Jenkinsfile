@@ -10,7 +10,7 @@ pipeline {
                     echo "This is your building Block"
                     node -v
                     npm -v
-					
+					npm list mocha
                     '''
                 }
             }
@@ -18,7 +18,7 @@ pipeline {
                 steps {
                     sh '''
                     echo "This is your testing Block"
-                    mocha test --reporter mocha-junit-reporter
+                    
                     '''
                 }
             }
