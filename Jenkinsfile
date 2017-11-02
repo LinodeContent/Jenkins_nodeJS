@@ -3,7 +3,9 @@ pipeline {
     stages {
       stage('Build') {
         steps {
-          sh 'npm install'
+          sh '''
+				deleteDir()
+				npm install'''
         }
       }
       stage('Test') {
