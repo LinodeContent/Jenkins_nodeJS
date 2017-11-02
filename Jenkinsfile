@@ -18,7 +18,7 @@ pipeline {
                 steps {
                     sh '''
                     echo "This is your testing Block"
-                    docker images
+                    node app.js
                     '''
                 }
             }
