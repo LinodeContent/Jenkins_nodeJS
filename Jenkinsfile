@@ -13,7 +13,7 @@ pipeline {
                     echo "This is your building Block"
                     node -v
                     npm -v
-					
+					npm -g config set user root
                     '''
                 }
             }
