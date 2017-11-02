@@ -10,7 +10,7 @@ pipeline {
       }
       stage('Test') {
         steps {
-          sh '''forever start --minUptime 100000 --spinSleepTime 100000 app.js
+          sh '''forever start --minUptime 1000 --spinSleepTime 1000 app.js
                 node ./node_modules/mocha/bin/mocha
                 node ./node_modules/mocha/bin/mocha test --reporter mocha-junit-reporter
 				forever stopall
