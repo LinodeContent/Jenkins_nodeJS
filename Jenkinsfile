@@ -1,5 +1,10 @@
 pipeline {
-	agent node:4.8.5-alpine
+	agent docker {
+        image 'node:4.8.5-alpine'
+        label 'nodeJS'
+        
+    }
+
         stages {
             stage('Build') {
                 steps {
