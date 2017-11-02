@@ -1,0 +1,32 @@
+{
+  "name": "Jenkins_nodeJS",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LinodeContent/Jenkins_nodeJS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LinodeContent/Jenkins_nodeJS/issues"
+  },
+  "homepage": "https://github.com/LinodeContent/Jenkins_nodeJS#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "mocha": "^4.0.1",
+    "mocha-junit-reporter": "^1.15.0",
+    "should": "^13.1.3",
+    "supertest": "^3.0.0"
+  }
+}

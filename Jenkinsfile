@@ -1,9 +1,6 @@
 pipeline {
 	agent { 
-		docker {
-	        image 'node:4.8.5-alpine'
-	        
-		}        
+		dockerfile true   
 	}
 
         stages {
