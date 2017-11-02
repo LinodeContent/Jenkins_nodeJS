@@ -19,7 +19,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh 'docker build -t nodeappV1 .'
+        sh 'docker build -t nodeapp:v1 .'
       }
     }
   }
