@@ -10,7 +10,7 @@ pipeline {
                     echo "This is your building Block"
                     node -v
                     npm -v
-					npm i --save express
+					
                     '''
                 }
             }
