@@ -12,8 +12,7 @@ pipeline {
                     sh '''
                     echo "This is your building Block"
                     node -v
-                    npm i --save express
-					npm i --save-dev supertest should mocha mocha-junit-reporter
+                    npm -v
 					
                     '''
                 }
