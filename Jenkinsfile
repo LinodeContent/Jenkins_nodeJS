@@ -1,14 +1,10 @@
 pipeline {
-  agent {
-    dockerfile {
-      filename 'Dockerfile'
-    }
-    
-  }
+  agent none
   stages {
-    stage('') {
+    stage('error') {
       steps {
-        sh 'npm install'
+        sh '''docker build -t nodeapp .
+'''
       }
     }
   }
