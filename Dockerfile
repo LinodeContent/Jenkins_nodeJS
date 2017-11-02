@@ -1,16 +1,15 @@
 FROM node:4.8.5-alpine
 
-USER root
-# Create app directory
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+RUN mkdir /app
+WORKDIR /app
  
 # Install app dependencies
-COPY package.json /usr/src/app/
+COPY package.json /app/
 RUN npm install
- 
+RUN npm i -g mocha  
+
 # Bundle app source
-COPY . /usr/src/app
+COPY . /app
  
 EXPOSE 9000
-CMD [ "npm", "app.js" ]
+ENTRYPOINT [ "npm", "start" ]
