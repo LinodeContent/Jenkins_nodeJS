@@ -6,4 +6,6 @@ app.get('/',function(req,res) {
   res.json(os);
 });
 
-app.listen(9000);
+app.listen(9000, function () {
+	console.log('=== app is running at port 9000 ===')
+})
