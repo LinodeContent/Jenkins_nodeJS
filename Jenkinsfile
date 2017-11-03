@@ -5,6 +5,7 @@ pipeline {
       steps {
         sh '''
 					npm install
+          deleteDir()
           '''
       }
       post {
