@@ -4,8 +4,9 @@ pipeline {
     stage('Build') {
       steps {
         sh '''
-					npm install
           deleteDir()
+					npm install
+          
           '''
       }
       post {
