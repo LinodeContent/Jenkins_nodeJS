@@ -17,7 +17,7 @@ pipeline {
       steps {
         sh '''
           forever start --minUptime 1000 --spinSleepTime 1000 app.js
-          node ./node_modules/mocha/bin/mocha
+          node ./node_modules/mocha/bin/mocha tests/**
           forever stopall
           junit 'jenkins-test-results.xml'
           '''			   
