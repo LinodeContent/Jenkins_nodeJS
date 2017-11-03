@@ -22,7 +22,7 @@ pipeline {
       post {
         always {
           sh '''
-          junit 'jenkins-test-results.xml'
+          node ./node_modules/.bin/mocha tests/** --reporter mocha-junit-reporter
           forever stopall
           '''
         }
