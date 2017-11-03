@@ -17,11 +17,6 @@ pipeline {
 '''
       }
     }
-    stage('Deploy') {
-      steps {
-        sh 'docker build -t nodeapp:v1 .'
-        junit 'jenkins-test-results.xml'
-      }
-    }
+   
   }
 }
