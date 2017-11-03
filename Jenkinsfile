@@ -14,7 +14,7 @@ pipeline {
         
           '''
         sh '''
-          node ./node_modules/mocha/bin/mocha tests/**
+          node mocha tests/**
           MOCHA_FILE=./jenkins-test-results.xml ./node_modules/.bin/mocha tests/** --reporter mocha-junit-reporter
           forever stopall
         '''
