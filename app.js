@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var os = ['Windows','macOS','Linux']
 
-app.get('/',function(req,res) {
+app.get('/os',function(req,res) {
   res.json(os);
 });
 
