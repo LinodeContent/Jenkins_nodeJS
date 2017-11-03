@@ -4,25 +4,30 @@ pipeline {
     stage('Build') {
       steps {
         sh '''
-				deleteDir()
-				npm install'''
+					npm install
+          '''
+      }
+      post {
+        success {
+          archiveArtifacts 'target/*.hpi, target/*.jpi'
+        }
       }
     }
     stage('Test') {
       steps {
-        sh '''forever start --minUptime 1000 --spinSleepTime 1000 app.js
-
-				forever stopall
+        sh '''
+          forever start --minUptime 1000 --spinSleepTime 1000 app.js
+          '''			   
+      }
+      post {
+        always {
+          sh '''
+          junit 'jenkins-test-results.xml'
+          forever stopall
           '''
-        sh '''MOCHA_FILE=./jenkins-test-results.xml ./node_modules/.bin/mocha tests/** --reporter mocha-junit-reporter
-'''
+        }
       }
     }
-    stage('Deploy') {
-      steps {
-        sh 'docker build -t nodeapp:v1 .'
-        junit 'jenkins-test-results.xml'
-      }
-    }
+   
   }
 }
