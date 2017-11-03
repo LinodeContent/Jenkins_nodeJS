@@ -13,8 +13,10 @@ pipeline {
         sh '''forever start --minUptime 1000 --spinSleepTime 1000 app.js
         
           '''
-        sh '''MOCHA_FILE=./jenkins-test-results.xml ./node_modules/.bin/mocha tests/** --reporter mocha-junit-reporter
-        forever stopall
+        sh '''
+          node ./node_modules/mocha/bin/mocha tests/**
+          MOCHA_FILE=./jenkins-test-results.xml ./node_modules/.bin/mocha tests/** --reporter mocha-junit-reporter
+          forever stopall
         '''
       }
     }
